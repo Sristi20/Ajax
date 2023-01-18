@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>The XMLHttpRequest Object</h2>
+<button type="button" onclick="loadDoc()">Request data</button>
+<p id="demo"></p>
+
+<script>
+function loadDoc() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+  console.log('aa', this.responseText)
+    document.getElementById("demo").innerHTML = this.responseText;
+  }
+  xhttp.open("GET", "https://reqres.in/api/users?page=2");
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>
